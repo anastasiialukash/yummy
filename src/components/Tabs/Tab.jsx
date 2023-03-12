@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-const Tab = styled.button`
+export const Tab = styled.button`
   font-size: 50px;
-  color: white;
   background-image: ${(props) => `url(${props.background})`};
+  color: white;
   background-size: cover;
   padding: 10px 60px;
   opacity: 0.6;
@@ -13,14 +13,13 @@ const Tab = styled.button`
   justify-content: left;
   display: flex;
   width: 100%;
-  height: 300px;
-  margin: 3.5rem auto 1.5rem;
+  height: 260px;
+  margin: 1.5rem auto 1.5rem;
   border-radius: 1rem;
   @media (max-width: 769px) {
     padding: 2rem 0;
   }
-  ${({ active }) => active
+  ${({active}) => active
           && `border-bottom: 2px solid black;
           opacity: 1;
           `}`;
-export default Tab;
