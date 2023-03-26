@@ -5,6 +5,8 @@ background: black;
 position: absolute;
 bottom: 0;
 width: 100%;
+  height: 150px;
+  margin-top: -150px;
   
 @media (max-width: 1000px) {
 	padding: 70px 30px;
@@ -24,7 +26,7 @@ export const Column = styled.div`
 display: flex;
 flex-direction: column;
 text-align: left;
-margin-left: 60px;
+margin-left: 100px;
 `;
 
 export const Row = styled.div`

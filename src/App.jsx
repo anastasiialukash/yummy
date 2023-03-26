@@ -1,39 +1,39 @@
 import React from 'react';
-import styled from 'styled-components';
-import {TabGroup} from './components/Tabs/TabGroup.jsx';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+//import {Menu} from "./components/Menu/Menu";
+//import {MenuCategoryPage} from "./pages/MenuCategoryPage/MenuCategoryPage";
+// import {dishes} from "./dishes";
+// import Cart from "./components/Cart/Cart";
+
+import Navbar from "./components/Navbar/Navbar";
+import Menu from "./pages/RestaurantPage/RestaurantPage";
+import About from "./pages/About/About";
+import CartPage from "./pages/CartPage/CartPage";
 import {Footer} from "./components/Footer/Footer";
-import {Header} from "./components/Header/Header";
-
-const Container = styled.div`
-  width: 100%;
-  height: 821px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url('/assests/pizzaBgd.png');
-`;
-
-const Title = styled.h1`
-  margin: 17px;
-  text-align: center;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  height: 100px;
-  width: 100%;
-  font-size: xxx-large;
-  font-family: cursive;
-  padding-top: 30px;
-`;
-
+import "./style.css"
 export const App = () => {
+    // return (
+    //     <BrowserRouter>
+    //         <Routes>
+    //              <Route path="/" element={<MenuCategoryPage />}/>
+    //             <Provider />
+    //             {/*<Route path="menu" element={<Menu menu={dishes}/>}/>*/}
+    //             {/*<Route path="cart" element={<Cart />}/>*/}
+    //         </Routes>
+    //     </BrowserRouter>
+    // );
     return (
-        <Container>
-            <Header/>
-            <Title>Welcome to Yummy!</Title>
-            <TabGroup/>
-            <Footer/>
-        </Container>
+        <>
+            <BrowserRouter>
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<Menu />} />
+                    <Route exact path="/about" element={<About />} />
+                    <Route exact path="/cart" element={<CartPage />} />
+                </Routes>
+                <Footer />
+            </BrowserRouter>
+        </>
     );
 }
 

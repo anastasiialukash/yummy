@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Tab} from './Tab.jsx';
 import ButtonGroup from '../Buttons/ButtonGroup.jsx';
+// import {Menu} from "../Menu/Menu";
+// import {mockDishes} from "../mockDishes";
 
-const pizzaTab = '/assests/pizzaTab.png';
-const sushiTab = '/assests/sushiTab.png';
-const dessertsTab = '/assests/dessertsTab.png';
+const pizzaTab = '/assets/pizzaTab.png';
+const sushiTab = '/assets/sushiTab.png';
+const dessertsTab = '/assets/dessertsTab.png';
 
 const getTabImg = (tabName) => {
     switch (tabName) {
@@ -21,17 +23,13 @@ const getTabImg = (tabName) => {
 
 const types = ['Pizza', 'Sushi', 'Desserts'];
 export const TabGroup = () => {
-    const [active, setActive] = useState(types[0]);
     return (
         <ButtonGroup>
             {types.map((type) => (
                 <Tab background={getTabImg(type)}
                      key={type}
-                     active={active === type}
-                     onClick={() => setActive(type)}
-                     onTabClick
+                     type={type}
                 >
-                    {type}
                 </Tab>
             ))}
         </ButtonGroup>

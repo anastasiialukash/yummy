@@ -39,13 +39,6 @@ export const Footer = () => {
 				</span>
                             </i>
                         </FooterLink>
-                        <FooterLink href="#">
-                            <i className="fab fa-twitter">
-				<span style={{ marginLeft: "10px" }}>
-				Twitter
-				</span>
-                            </i>
-                        </FooterLink>
                     </Column>
                 </Row>
             </Container>

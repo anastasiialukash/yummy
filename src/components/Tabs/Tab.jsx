@@ -1,25 +1,17 @@
-import styled from 'styled-components';
+import React from "react";
+import {TabBtn} from './TabStyles.js';
+import {useNavigate} from "react-router-dom";
+// import {Menu} from "../Menu/Menu";
+// import {mockDishes} from "../mockDishes";
 
-export const Tab = styled.button`
-  font-size: 50px;
-  background-image: ${(props) => `url(${props.background})`};
-  color: white;
-  background-size: cover;
-  padding: 10px 60px;
-  opacity: 0.6;
-  border: 0;
-  outline: 0;
-  align-items: flex-start;
-  justify-content: left;
-  display: flex;
-  width: 100%;
-  height: 260px;
-  margin: 1.5rem auto 1.5rem;
-  border-radius: 1rem;
-  @media (max-width: 769px) {
-    padding: 2rem 0;
-  }
-  ${({active}) => active
-          && `border-bottom: 2px solid black;
-          opacity: 1;
-          `}`;
+export const Tab = ({background, key, type}) => {
+    const navigate = useNavigate();
+    return (
+            <TabBtn background={background}
+                    key={key}
+                    onClick={() => navigate("menu")}
+            >
+                {type}
+            </TabBtn>
+    );
+}
